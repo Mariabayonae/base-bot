@@ -13,10 +13,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  
+  font-family: 'Libre Baskerville', serif;
   
   /* Código para poner un cursor personalizado*/
- /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto; */
+ cursor: url("https://cur.cursors-4u.net/food/foo-1/foo44.cur"), auto;
 
 }
 
@@ -34,21 +34,24 @@ h2 {
 #tituloPagina {
   margin-top: 1em;
   margin-bottom: 0;
-  font-family: sans-serif;
+
 }
 
 #foto {
  height: 300px;
-  border: #ff7300 solid 5px;
+  border: black solid 4px;
   margin-top: 15px;
 }
 
 .tituloPrediccion {
   font-size: 2em;
+  margin-top: 15px;
 }
 
 .prediccion {
   font-size: 1.5em;
+  padding: 0.25px;
+  line-height: 1.6;
 }
 
 .prediccion::first-letter {
@@ -57,8 +60,12 @@ h2 {
 
 #boton {
   font-size: 0.9em;
-  background-color: #3d00fdb5;
+  background-color: black;
   color: white;
   margin-bottom: 2em;
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
 }
