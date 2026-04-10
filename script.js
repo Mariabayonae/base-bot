@@ -1,6 +1,5 @@
 // Crear las listas de imágenes, títulos y frases
 const videos = [
-"assets/"
 
 
 
