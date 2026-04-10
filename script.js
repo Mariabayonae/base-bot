@@ -1,6 +1,10 @@
 // Crear las listas de imágenes, títulos y frases
-const videos = ["
-"];
+const videos = [
+"assets/"
+
+
+
+];
 
 const titulos = [
   "Tortuga morrocoy",
