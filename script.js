@@ -1,22 +1,30 @@
 // Crear las listas de imágenes, títulos y frases
-const videos = [
-
-
-
+const imagenes = 
+  "assets/1.png
+  
+  "
 ];
 
 const titulos = [
-  "Tortuga morrocoy",
-  "Ranita venenosa",
+"El Consuelo",
+"La Conexión",
+"La Calma",
+"El Impulso",
+"La Renovación",
+"La Evasión"
 ];
 
 const frases = [
-  "Te alimentas de plantas, frutas, hojas y flores. Vives en bosques de climas cálidos y prefieres la tierra que el agua.",
-  "Eres pequeña pero tu extravagancia no pasa desapercibida. Vives en bosques húmedos y lluviosos y tienes veneno en la piel.",
+"Creo que necesitas un poco de calma. Has cargado cosas sin darte cuenta y solo quieres sentirte mejor, aunque sea un momento.",
+"Se nota que te hace falta compartir más. Tal vez no todo es tan complicado, solo necesitas a alguien cerca.",
+"No tienes que resolver todo ya. Date un momento, respira… a veces eso ya es suficiente.",
+"Hay algo que quieres hacer ya mismo. Solo piensa si es lo que de verdad necesitas o solo lo que se siente fácil.",
+"Algo en ti quiere cambiar, aunque no lo tengas claro. Y está bien empezar poco a poco.",
+"Puede que estés tratando de no pensar mucho en lo que sientes. Pero tarde o temprano eso vuelve… y está bien enfrentarlo a tu ritmo."
 ];
 
 // Trae los elementos del HTML que tienen ese id
-const imagen = document.getElementById("foto");
+const imagen = document.getElementById("video");
 const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("prediccion1");
 const boton = document.getElementById("boton");
@@ -28,7 +36,7 @@ function numeroRandom(min, max) {
 
 function generarPrediccion() {
   // Para elegir la misma posición en todas las listas, generar un solo número aleatorio
-  const indice = numeroRandom(0, frases.length); // 0, 1, 2, 3
+  const indice = numeroRandom(0, frases.length);
 
   // Reemplaza el texto del elemento 'titulo' por un título de la lista de títulos elegido aleatoriamente
   titulo.innerText = titulos[indice]; // Entre los [] se pasa el número aleatorio generado arriba
