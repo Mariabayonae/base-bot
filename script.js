@@ -1,9 +1,7 @@
 // Crear las listas de imágenes, títulos y frases
-const imagenes = 
-  "assets/1.png
-  
-  "
-];
+const imagenes = [ 
+  "assets/"
+  ]; 
 
 const titulos = [
 "El Consuelo",
@@ -24,7 +22,7 @@ const frases = [
 ];
 
 // Trae los elementos del HTML que tienen ese id
-const imagen = document.getElementById("video");
+const imagen = document.getElementById("imagen");
 const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("prediccion1");
 const boton = document.getElementById("boton");
