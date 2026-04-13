@@ -13,11 +13,11 @@ html, body {
 }
 #imagen {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  background-color: transparent;
-  max-height: 60vh;
   max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; 
 }
 }
 #titulo1 {

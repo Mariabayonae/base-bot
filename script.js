@@ -1,11 +1,11 @@
 // IMÁGENES
-const imagenes = [
-  "assets/1.png",
-  "assets/2.png",
-  "assets/3.png",
-  "assets/4.png",
-  "assets/5.png",
-  "assets/6.png"
+const videos = [
+  "assets/Chocolate.mp4",
+  "assets/Pizza.mp4",
+  "assets/Té.mp4",
+  "assets/Hamburguesa.mp4",
+  "assets/Ensalada.mp4",
+  "assets/Coctel.mp4"
 ];
 const colores = [
   "#4a2c2a",
@@ -31,9 +31,10 @@ const frases = [
   "Algo en ti quiere cambiar, aunque no lo tengas claro. Y está bien empezar poco a poco.",
   "Puede que estés tratando de no pensar mucho en lo que sientes. Pero tarde o temprano eso vuelve… y está bien enfrentarlo a tu ritmo."
 ];
-const imagen = document.getElementById("imagen");
+const video = document.getElementById("#imagen");
+const source = document.getElementById("#imagen source");
 const titulo = document.getElementById("titulo1");
-const prediccion = document.getElementById("prediccion1");
+const prediccion = document.getElementById ("predicaccion1")
 const boton = document.getElementById("boton");
 
 function numeroRandom(min, max) {
@@ -48,12 +49,14 @@ function generarPrediccion() {
   let indice;
 
   do {
-    indice = numeroRandom(0, imagenes.length);
+    indice = numeroRandom(0, videos.length);
   } while (indice === ultimoIndice);
 
   ultimoIndice = indice;
 
-  imagen.src = imagenes[indice];
+  source.src = videos [indice]
+  video. load()
+  
   titulo.innerText = titulos[indice];
   prediccion.innerText = frases[indice];
   document.body.style.backgroundColor = colores[indice];
