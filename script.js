@@ -61,11 +61,6 @@ function generarPrediccion() {
   prediccion.innerText = frases[indice];
   document.body.style.backgroundColor = colores[indice];
 }
-if (indice === 1) {
-  prediccion.style.color = "white"; 
-} else {
-  prediccion.style.color = "black"
-}
 
 // BOTÓN
 boton.addEventListener("click", generarPrediccion);
