@@ -23,6 +23,7 @@ const titulos = [
   "La Renovación",
   "La Evasión"
 ];
+
 const frases = [
   "Creo que necesitas un poco de calma. Has cargado cosas sin darte cuenta y solo quieres sentirte mejor, aunque sea un momento.",
   "Se nota que te hace falta compartir más. Tal vez no todo es tan complicado, solo necesitas a alguien cerca.",
@@ -31,10 +32,10 @@ const frases = [
   "Algo en ti quiere cambiar, aunque no lo tengas claro. Y está bien empezar poco a poco.",
   "Puede que estés tratando de no pensar mucho en lo que sientes. Pero tarde o temprano eso vuelve… y está bien enfrentarlo a tu ritmo."
 ];
-const video = document.getElementById("#imagen");
-const source = document.getElementById("#imagen source");
+const video = document.getElementById("imagen");
+//const source = document.getElementById("#imagen source");
 const titulo = document.getElementById("titulo1");
-const prediccion = document.getElementById ("predicaccion1")
+const prediccion = document.getElementById ("prediccion1")
 const boton = document.getElementById("boton");
 
 function numeroRandom(min, max) {
@@ -54,12 +55,16 @@ function generarPrediccion() {
 
   ultimoIndice = indice;
 
-  source.src = videos [indice]
-  video. load()
+  video.src = videos[indice];
   
   titulo.innerText = titulos[indice];
   prediccion.innerText = frases[indice];
   document.body.style.backgroundColor = colores[indice];
+}
+if (indice === 1) {
+  prediccion.style.color = "white"; 
+} else {
+  prediccion.style.color = "black"
 }
 
 // BOTÓN
