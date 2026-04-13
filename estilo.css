@@ -19,7 +19,7 @@ html, body {
   display: block;
   margin: 0 auto; 
 }
-}
+
 #titulo1 {
   font-size: clamp(1rem, 2.5vw, 1.3em);
   margin-top: 10px;
