@@ -2,13 +2,13 @@
 const videos = [
   "assets/Chocolate.mp4",
   "assets/Pizza.mp4",
-  "assets/Té.mp4",
+  "assets/Te.mp4",
   "assets/Hamburguesa.mp4",
   "assets/Ensalada.mp4",
   "assets/Coctel.mp4"
 ];
 const colores = [
-  "#4a2c2a",
+  "#4a2c2a66",
   "#ee3423",
   "#cbe499",
   "#ff9212",
