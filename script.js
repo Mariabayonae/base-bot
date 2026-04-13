@@ -1,4 +1,4 @@
-// IMÁGENES (asegúrate que estos archivos existen en /assets)
+// IMÁGENES
 const imagenes = [
   "assets/1.png",
   "assets/2.png",
@@ -7,18 +7,14 @@ const imagenes = [
   "assets/5.png",
   "assets/6.png"
 ];
-
-// COLORES (tu paleta)
 const colores = [
-  "#4a2c2a", // Chocolate
-  "#ee3423", // Pizza
-  "#cbe499", // Té
-  "#ff9212", // Hamburguesa
-  "#a8d5ba", // Ensalada
-  "#ff7676"  // Cóctel
+  "#4a2c2a",
+  "#ee3423",
+  "#cbe499",
+  "#ff9212",
+  "#a8d5ba",
+  "#ff7676"
 ];
-
-// TÍTULOS
 const titulos = [
   "El Consuelo",
   "La Conexión",
@@ -27,8 +23,6 @@ const titulos = [
   "La Renovación",
   "La Evasión"
 ];
-
-// FRASES
 const frases = [
   "Creo que necesitas un poco de calma. Has cargado cosas sin darte cuenta y solo quieres sentirte mejor, aunque sea un momento.",
   "Se nota que te hace falta compartir más. Tal vez no todo es tan complicado, solo necesitas a alguien cerca.",
@@ -37,32 +31,37 @@ const frases = [
   "Algo en ti quiere cambiar, aunque no lo tengas claro. Y está bien empezar poco a poco.",
   "Puede que estés tratando de no pensar mucho en lo que sientes. Pero tarde o temprano eso vuelve… y está bien enfrentarlo a tu ritmo."
 ];
-
-// ELEMENTOS DEL HTML
 const imagen = document.getElementById("imagen");
 const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("prediccion1");
 const boton = document.getElementById("boton");
-
-// FUNCIÓN RANDOM
+const botonIr = document.getElementById("ir");
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+// EVITAR REPETIR
+let ultimoIndice = -1;
 
-// FUNCIÓN PRINCIPAL
+// FUNCIÓN
 function generarPrediccion() {
-  const indice = numeroRandom(0, imagenes.length);
+  let indice;
+
+  do {
+    indice = numeroRandom(0, imagenes.length);
+  } while (indice === ultimoIndice);
+   ultimoIndice = indice;
 
   imagen.src = imagenes[indice];
   titulo.innerText = titulos[indice];
   prediccion.innerText = frases[indice];
-
-  // CAMBIO DE COLOR DE FONDO
   document.body.style.backgroundColor = colores[indice];
 }
-
-// EVENTO BOTÓN
+// BOTONES
 boton.addEventListener("click", generarPrediccion);
 
-// CARGA INICIAL
+botonIr.addEventListener("click", function(e) {
+  e.preventDefault();
+  generarPrediccion();
+});
+// INICIO
 generarPrediccion();

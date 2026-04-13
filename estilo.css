@@ -1,4 +1,4 @@
-html {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Playfair Display', serif;
@@ -13,37 +13,28 @@ html {
 #imagen {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: white;
   margin-top: 15px;
   border-radius: 12px;
 }
-/* Título */
 #titulo1 {
-  margin-top: 15px;
   font-size: 2em;
+  margin-top: 15px;
 }
-/* Predicción centrada */
 #prediccion1 {
   font-size: 1.2em;
   margin-top: 10px;
   line-height: 1.6;
 }
-/* Botón grande y cuadrado */
-#boton {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-/* Botón "Ir" más grande */
-#ir {
+#boton, #ir {
   display: inline-block;
   margin-top: 15px;
   padding: 15px 30px;
+  font-size: 1em;
   background-color: black;
   color: white;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
