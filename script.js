@@ -35,10 +35,11 @@ const imagen = document.getElementById("imagen");
 const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("prediccion1");
 const boton = document.getElementById("boton");
-const botonIr = document.getElementById("ir");
+
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
 // EVITAR REPETIR
 let ultimoIndice = -1;
 
@@ -49,19 +50,17 @@ function generarPrediccion() {
   do {
     indice = numeroRandom(0, imagenes.length);
   } while (indice === ultimoIndice);
-   ultimoIndice = indice;
+
+  ultimoIndice = indice;
 
   imagen.src = imagenes[indice];
   titulo.innerText = titulos[indice];
   prediccion.innerText = frases[indice];
   document.body.style.backgroundColor = colores[indice];
 }
-// BOTONES
+
+// BOTÓN
 boton.addEventListener("click", generarPrediccion);
 
-botonIr.addEventListener("click", function(e) {
-  e.preventDefault();
-  generarPrediccion();
-});
 // INICIO
 generarPrediccion();
