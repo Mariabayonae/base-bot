@@ -1,47 +1,77 @@
-// Crear las listas de imágenes, títulos y frases
 const imagenes = [
-  "https://www.postposmo.com/wp-content/uploads/2020/09/Especies-end%C3%A9micas-de-colombia-3.jpg",
-  "https://www.postposmo.com/wp-content/uploads/2020/09/Especies-end%C3%A9micas-de-colombia-4.jpg",
+ "fotos/chocolate.jpg",
+  "fotos/helado.jpg",
+  "fotos/pastel.jpg",
+
+  "fotos/gomitas.jpg",
+  "fotos/galletas.jpg" 
 ];
 
 const titulos = [
-  "Tortuga morrocoy",
-  "Ranita venenosa",
+  "Chocolate caliente",
+  "Helado cremoso",
+  "Pastel de cumpleaños",
+  "Gomitas ácidas",
+  "Galletas recién horneadas"
 ];
 
 const frases = [
-  "Te alimentas de plantas, frutas, hojas y flores. Vives en bosques de climas cálidos y prefieres la tierra que el agua.",
-  "Eres pequeña pero tu extravagancia no pasa desapercibida. Vives en bosques húmedos y lluviosos y tienes veneno en la piel.",
+  "Necesitas un descanso. Algo tranquilo, sin exigencias, que te haga sentir seguro.",
+  "Hoy estás más sensible. No te fuerces, todo puede ir más despacio.",
+  "No tienes que hacer nada especial para merecer algo bonito. Date el crédito.",
+  "Estás buscando algo distinto, un cambio pequeño que te saque de la rutina.",
+  "Tu cabeza está muy llena. Respira un poco y baja la intensidad.",
 ];
 
-// Trae los elementos del HTML que tienen ese id
+const clases = [
+  "chocolate",
+  "helado",
+  "pastel",
+  "gomitas",
+  "galletas"
+];
+
+
 const imagen = document.getElementById("foto");
 const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("prediccion1");
 const boton = document.getElementById("boton");
+const body = document.body;
 
-// Función para generar un número aleatorio entre un valor mínimo y un máximo
+let index = 0;
+let modoRandom = false;
+
 function numeroRandom(min, max) {
-  return Math.ceil(Math.random() * (max - min) + min - 1);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function generarPrediccion() {
-  // Para elegir la misma posición en todas las listas, generar un solo número aleatorio
-  const indice = numeroRandom(0, frases.length); // 0, 1, 2, 3
 
-  // Reemplaza el texto del elemento 'titulo' por un título de la lista de títulos elegido aleatoriamente
-  titulo.innerText = titulos[indice]; // Entre los [] se pasa el número aleatorio generado arriba
+  let i;
 
-  // Reemplaza la imagen del elemento 'imagen' por una elegida aleatoriamente
-  imagen.src = imagenes[indice];
+ 
+  if (!modoRandom) {
+    i = index;
+    index++;
 
-  // Reemplaza el texto del elemento 'predicción' por las frases elegidas aleatoriamente
-  prediccion.innerHTML = `<p>${frases[indice]}</p>`;
+    
+    if (index >= frases.length) {
+      modoRandom = true;
+    }
+
+  } else {
+    i = numeroRandom(0, frases.length);
+  }
+
+  titulo.innerText = titulos[i];
+  imagen.src = imagenes[i];
+  prediccion.innerText = frases[i];
+
+  body.className = "";
+  body.classList.add(clases[i]);
 }
 
-// Ejecuta la función generarPoema() cada vez que hago click en el botón
-boton.addEventListener("click", function () {
-  generarPrediccion();
-});
+boton.addEventListener("click", generarPrediccion);
+
 
 generarPrediccion();
